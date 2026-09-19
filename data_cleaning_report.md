@@ -1,0 +1,147 @@
+# Data Cleaning Report
+
+## Dataset Overview
+- Rows: 295732
+- Columns: 64
+- Column names:
+  - `match_id`
+  - `date`
+  - `match_type`
+  - `event_name`
+  - `innings`
+  - `batting_team`
+  - `bowling_team`
+  - `over`
+  - `ball`
+  - `ball_no`
+  - `batter`
+  - `bat_pos`
+  - `runs_batter`
+  - `balls_faced`
+  - `bowler`
+  - `valid_ball`
+  - `runs_extras`
+  - `runs_total`
+  - `runs_bowler`
+  - `runs_not_boundary`
+  - `extra_type`
+  - `non_striker`
+  - `non_striker_pos`
+  - `wicket_kind`
+  - `player_out`
+  - `fielders`
+  - `runs_target`
+  - `review_batter`
+  - `team_reviewed`
+  - `review_decision`
+  - `umpire`
+  - `umpires_call`
+  - `player_of_match`
+  - `match_won_by`
+  - `win_outcome`
+  - `toss_winner`
+  - `toss_decision`
+  - `venue`
+  - `city`
+  - `day`
+  - `month`
+  - `year`
+  - `season`
+  - `gender`
+  - `team_type`
+  - `superover_winner`
+  - `result_type`
+  - `method`
+  - `balls_per_over`
+  - `overs`
+  - `event_match_no`
+  - `stage`
+  - `match_number`
+  - `team_runs`
+  - `team_balls`
+  - `team_wicket`
+  - `new_batter`
+  - `power_surge_start`
+  - `batter_runs`
+  - `batter_balls`
+  - `bowler_wicket`
+  - `batting_partners`
+  - `striker_out`
+  - `next_batter`
+- Data types:
+  - `match_id`: int64
+  - `date`: object
+  - `match_type`: object
+  - `event_name`: object
+  - `innings`: int64
+  - `batting_team`: object
+  - `bowling_team`: object
+  - `over`: int64
+  - `ball`: int64
+  - `ball_no`: float64
+  - `batter`: object
+  - `bat_pos`: int64
+  - `runs_batter`: int64
+  - `balls_faced`: int64
+  - `bowler`: object
+  - `valid_ball`: int64
+  - `runs_extras`: int64
+  - `runs_total`: int64
+  - `runs_bowler`: int64
+  - `runs_not_boundary`: bool
+  - `extra_type`: object
+  - `non_striker`: object
+  - `non_striker_pos`: int64
+  - `wicket_kind`: object
+  - `player_out`: object
+  - `fielders`: object
+  - `runs_target`: float64
+  - `review_batter`: object
+  - `team_reviewed`: object
+  - `review_decision`: object
+  - `umpire`: object
+  - `umpires_call`: bool
+  - `player_of_match`: object
+  - `match_won_by`: object
+  - `win_outcome`: object
+  - `toss_winner`: object
+  - `toss_decision`: object
+  - `venue`: object
+  - `city`: object
+  - `day`: int64
+  - `month`: int64
+  - `year`: int64
+  - `season`: object
+  - `gender`: object
+  - `team_type`: object
+  - `superover_winner`: object
+  - `result_type`: object
+  - `method`: object
+  - `balls_per_over`: int64
+  - `overs`: int64
+  - `event_match_no`: object
+  - `stage`: object
+  - `match_number`: object
+  - `team_runs`: int64
+  - `team_balls`: int64
+  - `team_wicket`: int64
+  - `new_batter`: object
+  - `power_surge_start`: float64
+  - `batter_runs`: int64
+  - `batter_balls`: int64
+  - `bowler_wicket`: int64
+  - `batting_partners`: object
+  - `striker_out`: int64
+  - `next_batter`: object
+- Total missing values: 4196750
+- Duplicate rows: 0
+
+## Cleaning Actions Applied
+- Removed duplicate rows
+- Stripped whitespace from string columns
+- Standardized column names to snake_case
+- Parsed date columns to datetime where possible
+- Converted numeric columns where possible
+- Filled missing numeric values with 0
+- Filled missing categorical values with 'Unknown'
+- Added `is_outlier` flag using IQR method
