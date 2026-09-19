@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPL Analysis Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+
+<body>
+  <header class="hero-header">
+    <div class="header-title-row">
+      <div class="team-logo-strip" id="team-logo-strip" aria-label="IPL team badges"></div>
+      <div class="title-block">
+        <h1>IPL Analysis</h1>
+      </div>
+      <div class="season-filter">
+        <label for="season-select">Select Season</label>
+        <select id="season-select">
+          <option value="all">All Seasons</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-shell">
+    <section class="kpi-section" id="kpi-cards" aria-label="Tournament highlights"></section>
+
+    <section class="dashboard-grid" aria-label="IPL analytics">
+      <section class="stats-panel stats-panel--batting" aria-labelledby="batting-title">
+        <div class="section-toolbar">
+          <div class="section-title">
+            <span class="section-icon" data-icon="batter" aria-hidden="true"></span>
+            <h2 id="batting-title">IPL Batting Stats</h2>
+          </div>
+          <select id="batter-select" class="player-select" aria-label="Select batter">
+            <option value="all">All Batters</option>
+          </select>
+        </div>
+        <div class="stat-grid" id="batting-values"></div>
+      </section>
+
+      <section class="stats-panel stats-panel--bowling" aria-labelledby="bowling-title">
+        <div class="section-toolbar">
+          <div class="section-title">
+            <span class="section-icon" data-icon="bowler" aria-hidden="true"></span>
+            <h2 id="bowling-title">IPL Bowling Stats</h2>
+          </div>
+          <select id="bowler-select" class="player-select" aria-label="Select bowler">
+            <option value="all">All Bowlers</option>
+          </select>
+        </div>
+        <div class="stat-grid" id="bowling-values"></div>
+      </section>
+
+      <article class="chart-card chart-card--doughnut" id="matches-won-by">
+        <h2>Matches Won By</h2>
+        <div class="chart-frame chart-frame--doughnut">
+          <canvas id="won-by-chart"></canvas>
+        </div>
+      </article>
+
+      <article class="chart-card chart-card--wide" id="venue-wins">
+        <h2>Matches Won at Venue</h2>
+        <div class="chart-frame chart-frame--venue">
+          <canvas id="venue-chart"></canvas>
+        </div>
+      </article>
+
+      <article class="chart-card chart-card--wide" id="team-wins">
+        <h2>Total Matches Win by Team</h2>
+        <div class="chart-frame chart-frame--teams">
+          <canvas id="team-chart"></canvas>
+        </div>
+      </article>
+
+      <article class="chart-card chart-card--doughnut" id="toss-decision">
+        <h2>Matches Won by Toss Decision</h2>
+        <div class="chart-frame chart-frame--doughnut">
+          <canvas id="toss-chart"></canvas>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Data source: IPL.csv</p>
+    <button id="reset-filters" class="btn">Reset</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
